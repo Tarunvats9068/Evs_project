@@ -2,11 +2,11 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const Users = require('../models/user');
 passport.use('local',new LocalStrategy({
-    usernameField: 'email'
-},async function (email, password, done) {
+    usernameField: 'email',passReqToCallback:true
+},async function (req,email, password, done) {
    let user =  await Users.findOne({ email: email });
     if (!user || user.password != password || !user.verify) {
-        // req.flash('error','Email/Password is invalid');
+        req.flash('error','Email/Password is invalid');
         return done(null, false);
     }
     return done(null, user);

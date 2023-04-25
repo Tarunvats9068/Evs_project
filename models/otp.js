@@ -6,7 +6,8 @@ const usersSchema = new mongoose.Schema({
     },
     user:{ type:String,
            required:true,
+
 }
-},{timestamps: true});
+},{timestamps: true,expireAfterSeconds: 10},);
 const Otp = mongoose.model('Otp',usersSchema);
 module.exports = Otp;

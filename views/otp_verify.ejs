@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
     <title>Document</title>
 </head>
 <body>
+    <script>
+        <% if(message.success){ %>
+        new Noty({
+         theme:'relax',
+         text : "<%= message.success %>",
+         type:'success',
+         layout:'topRight',
+         timeout:1500
+      }).show();
+        <% } %>
+        <% if(message.error){ %>
+        new Noty({
+         theme:'relax',
+         text : "<%= message.error %>",
+         type:'error',
+         layout:'topRight',
+         timeout:1500
+      }).show();
+        <% } %>
+      </script> 
     <form action="/otp_verify" method="post">
         <label for="otp">otp</label>
         <input type="text" name="otp" id="otp">
