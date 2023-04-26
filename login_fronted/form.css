@@ -27,7 +27,7 @@ body{
 }
 label{
 	color: #fff;
-	font-size: 2.3em;
+	font-size: 1.8em;
 	justify-content: center;
 	display: flex;
 	margin: 60px;
@@ -41,16 +41,26 @@ input{
 	background: #ffffff;
 	justify-content: center;
 	display: flex;
-	margin: 20px auto;
+	margin: 5px auto;
 	padding: 10px;
 	border: none;
 	outline: none;
 	border-radius: 5px;
 }
+.forgetP{
+	color: #243e24;
+	font-size: 0.6rem;
+	display: flex;
+	transition: .5s ease-in-out;
+	margin-left: 61%;
+	/* display: contents; */
+
+}
 button{
 	width: 60%;
 	height: 40px;
-	margin: 10px auto;
+	margin-top: 3px;
+	margin: 10px auto	;
 	justify-content: center;
 	display: block;
 	color: #fff;
