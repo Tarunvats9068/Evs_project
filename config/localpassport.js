@@ -14,7 +14,7 @@ passport.use('local',new LocalStrategy({
 ));
 
 passport.serializeUser(function(user, done){
-    console.log(user);
+    // console.log(user);
     done(null, user.id);
 });
 passport.deserializeUser( async function (id, done) {
@@ -39,8 +39,6 @@ passport.setAuthenticatedUser = function(req,res,next){
     if(req.isAuthenticated())
     {
         res.locals.user = req.user;
-        // res.locals.post = req.post;
-        // console.log(res.locals.post);
     }
      return next();
 }

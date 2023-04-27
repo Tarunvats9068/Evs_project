@@ -30,6 +30,6 @@ app.use(passport.setAuthenticatedUser);
 app.use('/',require('./routes'));
 app.listen(port,'10.0.0.128',function(err){
     if(err){console.log("error in running the server"); return;};
-    return console.log('server is running on the port',port ) ;
+    return console.log(`server is running on url http://10.0.0.128:${port}/`) ;
 
 });
